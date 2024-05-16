@@ -29,12 +29,12 @@ jobs:
       - name: Run tests
         run: npm test
       - name: Output information
-        run: echo "MONGO DB - ${{ env.MONGODB_USERNAME }}:${{ env.MONGODB_PASSWORD }}@${{ env.MONGODB_CLUSTER_ADDRESS }}/${{ env.MONGODB_DB_NAME }}"
+        run: |
+          echo "MONGO DB - ${{ env.MONGODB_USERNAME }}:${{ env.MONGODB_PASSWORD }}@${{ env.MONGODB_CLUSTER_ADDRESS }}/${{ env.MONGODB_DB_NAME }}"
   deploy:
     needs: test
     runs-on: ubuntu-latest
     steps:
       - name: Output information
         run: |
-          echo "MONGO DB - ${{ env.MONGODB_USERNAME }}:${{ env.MONGODB_PASSWORD }}@${{ env.MONGODB_CLUSTER_ADDRESS }}/
           echo "MONGO DB NAME - ${{ env.MONGODB_DB_NAME }}"
