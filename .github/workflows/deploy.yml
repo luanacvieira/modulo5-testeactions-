@@ -39,3 +39,4 @@ jobs:
       - name: Output information
         run: |
           echo "MONGO DB NAME - ${{ env.MONGODB_DB_NAME }}"
+          echo "MONGO DB - ${{ env.MONGODB_USERNAME }}"
